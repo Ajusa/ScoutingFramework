@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="css/phonon.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <title>App</title>
+</head>
+
+<body>
+    <div class="side-panel side-panel-left" data-expose-aside="none" data-disable="right" data-page="home" id="side-home">
+        <header class="header-bar">
+            <button class="btn pull-right icon icon-close" data-side-panel-close="true"></button>
+            <div class="pull-left">
+                <h1 class="title">Panel</h1>
+            </div>
+        </header>
+
+        <div class="content">
+            <ul class="list">
+                <li><a class="padded-list">Home</a></li>
+                <li><a class="padded-list">Wiki</a></li>
+                <li><a class="padded-list">Settings</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Panel tags go here -->
+    <!-- Side Panel tags go here -->
+    <!-- Notification tags go here -->
+    <!-- Dialog tags go here -->
+    <home data-page="true"></home>
+    <autonboulder data-page="true"></autonboulder>
+    <autonmovement data-page="true"></autonmovement>
+    <autonother data-page="true"></autonother>
+    <robot data-page="true"></robot>
+    <teleopboulder data-page="true"></teleopboulder>
+    <teleopcrossed data-page="true"></teleopcrossed>
+    <team data-page="true"></team>
+
+    <!-- page tags -->
+    <script src="tags/home.tag" type="riot/tag"></script>
+    <script src="tags/team.tag" type="riot/tag"></script>
+    <script src="tags/autonboulder.tag" type="riot/tag"></script>
+    <script src="tags/autonmovement.tag" type="riot/tag"></script>
+    <script src="tags/autonother.tag" type="riot/tag"></script>
+    <script src="tags/robot.tag" type="riot/tag"></script>
+    <script src="tags/teleopboulder.tag" type="riot/tag"></script>
+    <script src="tags/teleopcrossed.tag" type="riot/tag"></script>
+    <script src="tags/formx.tag" type="riot/tag"></script>
+    <!-- scripts -->
+    <script src="riot+compiler.min.js"></script>
+    <script src="js/riotcontrol.js"></script>
+    <script src="stores/formStore.js"></script>
+    <script src="js/phonon.js"></script>
+    
+    <!-- our app config -->
+    <script src="app.js"></script>
+    <script>
+      var formStore = new Form() // Create a store instance.
+      RiotControl.addStore(formStore) // Register the store in central dispatch.
+    </script>
+</body>
+
+</html>
