@@ -20,14 +20,11 @@
             <li><a class="padded-list" href="#!teleopboulder">Boulder</a></li>
         </ul>
         <button class="btn positive fit-parent cancel" onclick={submit}>Submit</button>
+        <button class="btn negative fit-parent cancel">DELETE ALL DATA</button>
     </div>
     <script>
         submit(e) {
-            RiotControl.trigger('get_form');
-            setTimeout(function () {
                 RiotControl.trigger('submit');
-            }, 200);
-
         }
     </script>
 </home>

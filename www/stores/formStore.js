@@ -1,6 +1,9 @@
 function Form() {
     var self = this;
     if (store.get('data') == null) {
+        data.currentForm = [];
+        data.unsentForms = [];
+        store.set('data', data)
         //code for defaults
     } else {
         data = store.get('data')
@@ -10,7 +13,8 @@ function Form() {
         settings = value;
     });
     self.on('submit', function() {
-        data.unsentForms.push(data.unsentForms)
+        data.unsentForms.push(data.currentForm)
+        console.log(data)
         store.set('data', data)
         phonon.notif('Form Submitted', 1000, false);
         var req = phonon.ajax({

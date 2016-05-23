@@ -20,7 +20,6 @@
                 <h1 class="title">Panel</h1>
             </div>
         </header>
-
         <div class="content">
             <ul class="list">
                 <li><a class="padded-list">Home</a></li>
@@ -41,9 +40,11 @@
     <teleopboulder data-page="true"></teleopboulder>
     <teleopcrossed data-page="true"></teleopcrossed>
     <team data-page="true"></team>
-
     <!-- page tags -->
     <script src="tags/lib/number.tag" type="riot/tag"></script>
+    <script src="tags/lib/multiple.tag" type="riot/tag"></script>
+    <script src="tags/lib/choice.tag" type="riot/tag"></script>
+    <script src="tags/lib/checkbox.tag" type="riot/tag"></script>
     <script src="tags/home.tag" type="riot/tag"></script>
     <script src="tags/team.tag" type="riot/tag"></script>
     <script src="tags/autonboulder.tag" type="riot/tag"></script>
@@ -64,9 +65,9 @@
     <!-- our app config -->
     <script src="app.js"></script>
     <script>
-        var formStore = new Form() // Create a store instance.
-        RiotControl.addStore(formStore) // Register the store in central dispatch.
-        var save;
+    var data = {};
+    var formStore = new Form() // Create a store instance.
+    RiotControl.addStore(formStore) // Register the store in central dispatch.
     </script>
 </body>
 

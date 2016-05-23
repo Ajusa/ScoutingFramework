@@ -6,8 +6,9 @@
                 </label>
             </div>
             <script>
+            data.currentForm[this.opts.title] = undefined;
             set(e){
-            	data.unsentForm[this.opts.title] = e.item.value;
+            	data.currentForm[this.opts.title] = e.target.value;
             }
             </script>
 </number>
