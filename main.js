@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(cors());
-app.use(express.static('www'));
+app.use('/', express.static(__dirname + '/www'));
 fs.writeFile(fileName + ".xlsx", j2xls(data), 'binary', function(err) {
     error(err);
 });
@@ -24,11 +24,13 @@ fs.writeFile(fileName + "lead.xlsx", j2xls(data), 'binary', function(err) {
     error(err);
 });
 app.post('/', function(req, res) {
-    res.sendStatus(200);
+
     data.push(req.body);
+    console.log(req.body)
     fs.writeFile(fileName + ".xlsx", j2xls(data), 'binary', function(err) {
         error(err);
     });
+    res.sendStatus(200);
 });
 app.post('/lead', function(req, res) {
     lead.push(req.body);
@@ -48,6 +50,7 @@ for (var dev in ifaces) {
     if (iface.length > 0) address = iface[0].address;
 }
 console.log(address)
+
 function error(err) {
     if (err) {
         return console.log(err);

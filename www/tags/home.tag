@@ -23,8 +23,11 @@
     </div>
     <script>
         submit(e) {
-            RiotControl.trigger('submit')
+            RiotControl.trigger('get_form');
+            setTimeout(function () {
+                RiotControl.trigger('submit');
+            }, 200);
+
         }
-        
     </script>
 </home>

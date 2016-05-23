@@ -5,21 +5,10 @@
             <h1 class="title">Team Info</h1>
         </div>
     </header>
-
     <div class="content">
         <div class="padded-full">
-            <div class="input-wrapper">
-                <input class="with-label" type="number" id="match">
-                <label class="floating-label" for="match">
-                    Match Number
-                </label>
-            </div>
-            <div class="input-wrapper">
-                <input class="with-label" type="number" id="team">
-                <label class="floating-label" for="team">
-                    Team Number
-                </label>
-            </div>
+        <number title="match">Match Number</number>
+        <number title="team">Team Number</number>
             <ul class="list">
                 <li class="padded-for-list">
                     <label class="radio">
@@ -34,16 +23,29 @@
                     </label>
                 </li>
             </ul>
-
+            <button onclick={log}>Hello</button>
         </div>
     </div>
     <script>
         var self = this;
+        self.data = {};
+        log(e){
+            for (tag in self.tags){
+                for (l in self.tags[tag]){
+                console.log(self.tags[tag][l].opts)
+            }
+            }
+        }
         app.on({
             page: 'team',
             preventClose: false,
             content: null,
             readyDelay: 1
         });
+        RiotControl.on('get_form', function () {
+            freezer.get().currentForm.set('match', self.match.value);
+            freezer.get().currentForm.set('team', self.team.value);
+            freezer.get().currentForm.set('color', self.teamcolor.value);
+        })
     </script>
 </team>

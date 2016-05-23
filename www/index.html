@@ -9,7 +9,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="css/phonon.css" />
     <link rel="stylesheet" href="css/theme.css" />
-    <title>App</title>
+    <title>Scouting</title>
 </head>
 
 <body>
@@ -43,6 +43,7 @@
     <team data-page="true"></team>
 
     <!-- page tags -->
+    <script src="tags/lib/number.tag" type="riot/tag"></script>
     <script src="tags/home.tag" type="riot/tag"></script>
     <script src="tags/team.tag" type="riot/tag"></script>
     <script src="tags/autonboulder.tag" type="riot/tag"></script>
@@ -51,18 +52,21 @@
     <script src="tags/robot.tag" type="riot/tag"></script>
     <script src="tags/teleopboulder.tag" type="riot/tag"></script>
     <script src="tags/teleopcrossed.tag" type="riot/tag"></script>
+    <script src="js/jsonp.js"></script>
     <script src="tags/formx.tag" type="riot/tag"></script>
     <!-- scripts -->
     <script src="riot+compiler.min.js"></script>
     <script src="js/riotcontrol.js"></script>
-    <script src="stores/formStore.js"></script>
     <script src="js/phonon.js"></script>
-    
+    <script src="js/freezer.min.js"></script>
+    <script src="js/store.min.js"></script>
+    <script src="stores/formStore.js"></script>
     <!-- our app config -->
     <script src="app.js"></script>
     <script>
-      var formStore = new Form() // Create a store instance.
-      RiotControl.addStore(formStore) // Register the store in central dispatch.
+        var formStore = new Form() // Create a store instance.
+        RiotControl.addStore(formStore) // Register the store in central dispatch.
+        var save;
     </script>
 </body>
 
